@@ -2,13 +2,14 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             margin: 0;
             background: url('genshin.jpg');
             background-size: cover;
-            overflow: auto;
             position: relative;
+            min-height: 100vh;
         }
 
         h1 {
@@ -28,8 +29,9 @@
 
         #button-container {
             position: absolute;
-            top: -425px;
-            left: 20px;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1001;
         }
 
@@ -50,7 +52,7 @@
         .screenshot-container {
             display: flex;
             justify-content: center;
-            margin-top: 450px; /* Adjust the top margin as needed */
+            margin-top: 300px;
             position: relative;
         }
 
@@ -62,16 +64,45 @@
             background-position: center;
             border: 2px solid white;
             border-radius: 6px;
+            animation: moveBackground 20s linear infinite alternate;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(50vw);
+            }
+            100% {
+                transform: translateX(0);
+            }
         }
 
         #preview {
             position: absolute;
-            top: -200px; /* Adjust the top position as needed */
+            top: 150px;
             width: 100%;
-            font-size: 80px;
+            font-size: 40px;
             text-align: center;
             color: white;
-            z-index: 1001; /* Ensure the text is above the screenshots */
+            z-index: 1001;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .screenshot-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #button-container {
+                top: 10px;
+            }
+
+            #preview {
+                font-size: 30px;
+                top: 100px;
+            }
         }
     </style>
     <title>Genshin Impact</title>
