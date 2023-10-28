@@ -15,6 +15,11 @@
         h1 {
             text-align: center;
         }
+        h2 {
+            text-align: right;
+            font-size: 8px;  
+            font-family: Arial, sans-serif;                  
+        }
 
         #header {
             background-color: rgba(0, 0, 0, 0.5);
@@ -64,7 +69,17 @@
             background-position: center;
             border: 2px solid white;
             border-radius: 6px;
-            animation: moveBackground 20s linear infinite alternate;
+            animation: moveBackground 20s linear
+            infinite alternate;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
 
         @keyframes moveBackground {
@@ -135,7 +150,7 @@
 <body>
     <div id="header">
         <h1 style="color: white;">GEN<span style="animation: rainbow 6s linear infinite;">S</span>HIN IM<span style="animation: rainbow 6s linear infinite;">P</span>ACT?</h1>
-        <h2 style="color: white;">Roque, Lowie Josh D.</h2>
+        <h2 style="color: white;">Roque, Lowie Josh D.<br/>BSIT 2C-G2</h2>
     </div>
 
     <div id="button-container">
@@ -155,6 +170,13 @@
         <div class="screenshot" style="background-image: url('https://www.rpgfan.com/wp-content/uploads/2020/10/Genshin-Impact-Screenshot-108.jpg')"></div>
         <div class="screenshot" style="background-image: url('https://upload-os-bbs.hoyolab.com/upload/2022/06/16/159686683/d436bd7559e64a8b57007b2dcd94d2b4_5132853572161698370.png?x-oss-process=image%2Fresize%2Cs_1000%2Fauto-orient%2C0%2Finterlace%2C1%2Fformat%2Cwebp%2Fquality%2Cq_80')"></div>
     </div>
+    
+    <div class="vid">
+    <h2 style="text-align: center;">Genshin Impact GMV</h2>
+    <video controls width="100%">
+        <source src="gmv.mp4" type="video/mp4">
+    </video>
+</div>
 
 </body>
 
