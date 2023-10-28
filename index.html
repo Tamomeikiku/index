@@ -86,7 +86,31 @@
             font-size: 40px;
             text-align: center;
             color: white;
-            z-index: 1001;    
+            z-index: 1001;
+        }
+
+        @keyframes rainbow {
+            0% {
+                color: red;
+            }
+            16.666% {
+                color: orange;
+            }
+            33.333% {
+                color: yellow;
+            }
+            50% {
+                color: green;
+            }
+            66.666% {
+                color: blue;
+            }
+            83.333% {
+                color: indigo;
+            }
+            100% {
+                color: violet;
+            }
         }
 
         @media only screen and (max-width: 600px) {
@@ -110,7 +134,7 @@
 
 <body>
     <div id="header">
-        <h1 style="color: white;">GEN<span style="color: red;">S</span>HIN IM<span style="color: blue;">P</span>ACT?</h1>
+        <h1 style="color: white;">GEN<span style="animation: rainbow 6s linear infinite;">S</span>HIN IM<span style="animation: rainbow 6s linear infinite;">P</span>ACT?</h1>
         <h2 style="color: white;">Roque, Lowie Josh D.</h2>
     </div>
 
