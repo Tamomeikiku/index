@@ -6,19 +6,38 @@
     <style>
         body {
             margin: 0;
-            background: url('genshin.jpg');
+            background: url('skytree.png');
             background-size: cover;
             position: relative;
             min-height: 100vh;
+			z-index: 1000;
         }
 
         h1 {
             text-align: center;
         }
+
         h2 {
+			text-align: right;
+			margin:4px;
+			margin-right:10px;
+			margin-bottom: -20px;
+            font-size: 8px;
+            font-family: Arial, sans-serif;
+			color: white;
+        }
+		
+		h3 {
             text-align: right;
-            font-size: 8px;  
-            font-family: Arial, sans-serif;                  
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+			color: white;
+        }
+		
+		h4 {
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+			color: white;
         }
 
         #header {
@@ -31,10 +50,39 @@
             text-align: center;
             z-index: 1000;
         }
+		#scrollToTopBtn {
+			position: fixed;
+			bottom: 20px;
+			left: 1400px;
+			display: none;
+			width: 40px;
+			height: 40px;
+			border: none;
+			border-radius: 50%;
+			background-color: rgba(0, 0, 0, 0.5);
+			color: white;
+			font-size: 20px;
+			cursor: pointer;
+			z-index: 1000;
+			transition: opacity 0.3s ease-in-out;
+		}
+
+		#scrollToTopBtn:hover {
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+		
+		#text {
+            position: relative;
+            color: white;
+            text-align: left;
+            padding: 200px;
+            width: 70%;
+            margin: 0 auto;
+        }
 
         #button-container {
             position: absolute;
-            top: -280px;
+            top: 20px;
             left: 10%;
             transform: translateX(-50%);
             z-index: 1001;
@@ -69,9 +117,9 @@
             background-position: center;
             border: 2px solid white;
             border-radius: 6px;
-            animation: moveBackground 20s linear
-            infinite alternate;
+            animation: moveBackground 20s linear infinite alternate;
         }
+
         .container {
             max-width: 800px;
             margin: 20px auto;
@@ -144,40 +192,138 @@
                 top: 100px;
             }
         }
+
+        .vid {
+            max-width: 70%;
+            margin: 0 auto;
+			margin-bottom: 40px;
+        }
+
+        .vid video {
+            width: 100;
+        }
     </style>
     <title>Genshin Impact</title>
 </head>
 
 <body>
     <div id="header">
-        <h1 style="color: white;">GEN<span style="animation: rainbow 6s linear infinite;">S</span>HIN IM<span style="animation: rainbow 6s linear infinite;">P</span>ACT?</h1>
-        <h2 style="color: white;">Roque, Lowie Josh D.<br/>BSIT 2C-G2</h2>
+        <h1 style="color: white;">GEN<span style="animation: rainbow 6s linear infinite;">S</span>HIN IM<span
+                style="animation: rainbow 6s linear infinite;">P</span>ACT?</h1>
+        <h2 style="color: white;">Roque, Lowie Josh D.<br />BSIT 2C-G2</h2>
     </div>
 
     <div id="button-container">
-        <a href="https://streamable.com/w9qzy8">
+        <a href="https://genshin.hoyoverse.com/en/home">
             <button id="custom-button">
                 <img src="https://gcdnb.pbrd.co/images/TKB3zs2KoGxU.png?o=1" />
             </button>
         </a>
     </div>
+	<div id="text">
+        <h4>MASSIVE OPEN WORLD</h4>
+        <p>Climb any mountain, swim across any river, and glide over the world below, taking in the jaw-dropping scenery each step of the way. And if you stop to investigate a wandering Seelie or strange mechanism, who knows what you might discover?</p>
+
+        <h4>ELEMENTAL COMBAT SYSTEM</h4>
+        <p>Harness the seven elements to unleash elemental reactions. Anemo, Electro, Hydro, Pyro, Cryo, Dendro, and Geo interact in all sorts of ways, and Vision wielders have the power to turn this to their advantage. Will you vaporize Hydro with Pyro, electro-charge it with Electro, or freeze it with Cryo? Your mastery of the elements will give you the upper hand in battle and exploration.</p>
+
+        <h4>BEAUTIFUL VISUALS</h4>
+        <p>Feast your eyes on the world around you, with a stunning art style, real-time rendering, and finely tuned character animations delivering you a truly immersive visual experience. Lighting and weather all change naturally over time, bringing every detail of this world to life.</p>
+
+        <h4>SOOTHING SOUNDTRACK</h4>
+        <p>Let the beautiful sounds of Teyvat draw you in as you explore the expansive world around you. Performed by the world's top orchestras such as London Philharmonic Orchestra and Shanghai Symphony Orchestra, the soundtrack changes seamlessly with the time and gameplay to match the mood.</p>
+
+        <h4>BUILD YOUR DREAM TEAM</h4>
+        <p>Team up with a diverse cast of characters in Teyvat, each with their own unique personalities, stories, and abilities. Discover your favorite party combinations and level up your characters to help you conquer even the most daunting of enemies and domains.</p>
+
+        <h4>JOURNEY WITH FRIENDS</h4>
+        <p>Team up with friends across various platforms to trigger more elemental action, tackle tricky boss fights, and conquer challenging domains together to reap rich rewards. As you stand atop the peaks of Jueyun Karst and take in the rolling clouds and vast terrain stretching out before you, you may wish to stay in Teyvat a little longer... But until you are reunited with your lost sibling, how can you rest? Go forth, Traveler, and begin your adventure!</p>
+
+        <h4>SUPPORT</h4>
+        <p>If you encounter any issues during the game, you can send us feedback via the in-game Customer Service Center. Customer Service Email: genshin_cs@hoyoverse.com</p>
+    </div>
+
 
     <div class="screenshot-container">
         <div id="preview">
             <p>Preview/Screenshot</p>
         </div>
-        <div class="screenshot" style="background-image: url('https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200924/2020092417575534557.jpg')"></div>
-        <div class="screenshot" style="background-image: url('https://www.rpgfan.com/wp-content/uploads/2020/10/Genshin-Impact-Screenshot-074.jpg')"></div>
-        <div class="screenshot" style="background-image: url('https://www.rpgfan.com/wp-content/uploads/2020/10/Genshin-Impact-Screenshot-108.jpg')"></div>
-        <div class="screenshot" style="background-image: url('https://upload-os-bbs.hoyolab.com/upload/2022/06/16/159686683/d436bd7559e64a8b57007b2dcd94d2b4_5132853572161698370.png?x-oss-process=image%2Fresize%2Cs_1000%2Fauto-orient%2C0%2Finterlace%2C1%2Fformat%2Cwebp%2Fquality%2Cq_80')"></div>
+        <div class="screenshot"
+            style="background-image: url('https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200924/2020092417575534557.jpg')">
+        </div>
+        <div class="screenshot"
+            style="background-image: url('https://www.rpgfan.com/wp-content/uploads/2020/10/Genshin-Impact-Screenshot-074.jpg')">
+        </div>
+        <div class="screenshot"
+            style="background-image: url('https://www.rpgfan.com/wp-content/uploads/2020/10/Genshin-Impact-Screenshot-108.jpg')">
+        </div>
+        <div class="screenshot"
+            style="background-image: url('https://upload-os-bbs.hoyolab.com/upload/2022/06/16/159686683/d436bd7559e64a8b57007b2dcd94d2b4_5132853572161698370.png?x-oss-process=image%2Fresize%2Cs_1000%2Fauto-orient%2C0%2Finterlace%2C1%2Fformat%2Cwebp%2Fquality%2Cq_80')">
+        </div>
     </div>
-    
+
+	<iframe src="midnightMondstadt.mp3" type="audio/mp3" allow="autoplay" autoplay="true" id="audio" hidden="true></iframe>
+	
     <div class="vid">
-    <h2 style="text-align: center;">Genshin Impact GMV</h2>
-    <video controls width="100%">
-        <source src="gmv.mp4" type="video/mp4">
-    </video>
-</div>
+        <h3 style="text-align: center;">Genshin Impact GMV</h2>
+        <video id="gmv" controls width="100%">
+            <source src="gmv.mp4" type="video/mp4">
+			<source src="gmv.ogg" type="video/ogg">
+        <span>Your browser does not support the video tag.</span>
+		</video>
+    </div>
+	<button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">^</button>
+	
+	<script>
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    window.onscroll = function () {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    }
+
+	
+    function playVideo() {
+    const video = document.getElementById('gmv');
+    video.play();
+}
+
+	const handleIntersection = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            playVideo();
+            observer.unobserve(entry.target);
+        }
+    });
+};
+
+	const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2
+};
+
+	const observer = new IntersectionObserver(handleIntersection, options);
+
+	observer.observe(document.getElementById('gmv'));
+	
+	audioElement.play();
+</script>*/
+
 
 </body>
 
