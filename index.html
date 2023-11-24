@@ -105,7 +105,7 @@
         .screenshot-container {
             display: flex;
             justify-content: center;
-            margin-top: 300px;
+            margin-top: 100px;
             position: relative;
         }
 
@@ -150,7 +150,7 @@
             font-size: 40px;
             text-align: center;
             color: white;
-            z-index: 1001;
+            z-index: 999;
         }
 
         @keyframes rainbow {
@@ -186,11 +186,6 @@
             #button-container {
                 top: 10px;
             }
-
-            #preview {
-                font-size: 30px;
-                top: 100px;
-            }
         }
 
         .vid {
@@ -202,6 +197,58 @@
         .vid video {
             width: 100;
         }
+		
+		#about-us {
+			text-align: center;
+			padding-bottom: 20px;
+		}
+		
+		.btn {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #3498db;
+			color: #ffffff;
+			text-decoration: none;
+			border-radius: 5px;
+		}
+		
+		.modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8); /* Transparent black overlay */
+        }
+
+        .modal-content {
+            margin: auto;
+			margin-top: 100px;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .close {
+            color: #fff;
+            position: absolute;
+            margin-top: 120px;
+			left: 200px;
+            font-size: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+		
     </style>
     <title>Genshin Impact</title>
 </head>
@@ -209,7 +256,7 @@
 <body>
     <div id="header">
         <h1 style="color: white;">GEN<span style="animation: rainbow 6s linear infinite;">S</span>HIN IM<span
-                style="animation: rainbow 6s linear infinite;">P</span>ACT?</h1>
+                style="animation: rainbow 6s linear infinite;">P</span>ACT</h1>
         <h2 style="color: white;">Roque, Lowie Josh D.<br />BSIT 2C-G2</h2>
     </div>
 
@@ -245,24 +292,30 @@
 
 
     <div class="screenshot-container">
+	
         <div id="preview">
             <p>Preview/Screenshot</p>
         </div>
-        <div class="screenshot"
+        <div class="screenshot" onclick="openModal(this)"
             style="background-image: url('https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200924/2020092417575534557.jpg')">
         </div>
-        <div class="screenshot"
+        <div class="screenshot" onclick="openModal(this)"
             style="background-image: url('https://www.rpgfan.com/wp-content/uploads/2020/10/Genshin-Impact-Screenshot-074.jpg')">
         </div>
-        <div class="screenshot"
+        <div class="screenshot" onclick="openModal(this)"
             style="background-image: url('https://www.rpgfan.com/wp-content/uploads/2020/10/Genshin-Impact-Screenshot-108.jpg')">
         </div>
-        <div class="screenshot"
+        <div class="screenshot" onclick="openModal(this)"
             style="background-image: url('https://upload-os-bbs.hoyolab.com/upload/2022/06/16/159686683/d436bd7559e64a8b57007b2dcd94d2b4_5132853572161698370.png?x-oss-process=image%2Fresize%2Cs_1000%2Fauto-orient%2C0%2Finterlace%2C1%2Fformat%2Cwebp%2Fquality%2Cq_80')">
         </div>
     </div>
+	
+	<div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
 
-	<iframe src="midnightMondstadt.mp3" type="audio/mp3" allow="autoplay" autoplay="true" id="audio" style="display:transparent"></iframe>
+	<iframe src="midnightMondstadt.mp3" type="audio/mp3" allow="autoplay" autoplay="true" id="audio" style="display: none;"></iframe>
 	
     <div class="vid">
         <h3 style="text-align: center;">Genshin Impact GMV</h2>
@@ -272,6 +325,12 @@
         <span>Your browser does not support the video tag.</span>
 		</video>
     </div>
+	
+	<div id="about-us">
+		<a href="https://docs.google.com/document/d/1na6H4RWpi_UOV9iIrwxL2QiazkOZKipB/edit?usp=sharing&ouid=111111081432654488648&rtpof=true&sd=true" class="btn">
+			<center><p>About Me</p></center>
+		</a>
+	</div>
 	<button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">^</button>
 	
 	<script>
@@ -296,7 +355,8 @@
         }
     }
 
-	
+	</script>
+	<script>
     function playVideo() {
     const video = document.getElementById('gmv');
     video.play();
@@ -320,10 +380,26 @@
 	const observer = new IntersectionObserver(handleIntersection, options);
 
 	observer.observe(document.getElementById('gmv'));
-	
+	</script>
+	<script>
 	audioElement.play();
-</script>*/
 
+    const audioElement = document.getElementById('audio');
+    audioElement.play();
+	</script>
+	<script>
+        function openModal(element) {
+            const modal = document.getElementById('myModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.style.display = 'block';
+            modalImg.src = element.style.backgroundImage.slice(4, -1).replace(/"/g, "");
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+        }
+    </script>
 
 </body>
 
